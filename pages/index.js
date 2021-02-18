@@ -1,3 +1,4 @@
+import Head from "next/head";
 import { useMemo } from "react";
 import "tailwindcss/tailwind.css";
 import fs from "fs/promises";
@@ -85,6 +86,24 @@ export default function Home({ json }) {
 
   return (
     <div className="w-full h-screen flex justify-center flex-col items-center text-center">
+      <Head>
+        <title>When did my car last turn off while I was driving it?</title>
+        <meta charset="utf-8" />
+        <meta
+          name="description"
+          content="When did my 2000 Honda Accord last turn off while I was driving it? Find out here!"
+        />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:creator" content="@samwightt" />
+        <meta
+          name="twitter:description"
+          content="When did my 2000 Honda Accord last turn off while I was driving it? Find out here!"
+        />
+        <meta
+          name="twitter:title"
+          content="When did my car last turn off while driving it?"
+        />
+      </Head>
       <h1 className="text-xl font-semibold text-gray-900">
         When did my car last turn off while I was driving it?
       </h1>
@@ -95,6 +114,25 @@ export default function Home({ json }) {
         on {format(parsed[0].date, "MMMM co, yyyy 'at' hh:mm a")}
       </h3>
       <p className="max-w-xs mt-8 text-gray-500">{parsed[0].comment}</p>
+      <hr className="max-w-md w-full border-gray-300 my-10" />
+      <p className="text-gray-800 max-w-md text-sm">
+        Hi! I'm{" "}
+        <a
+          href="https://twitter.com/samwightt"
+          className="text-blue-400 font-semibold hover:text-blue-500 transition-all duration-200"
+        >
+          Sam
+        </a>
+        . I have a shitty 2000 Honda Accord that turns off randomly while I'm
+        driving it. If you want to help me buy a newer, safer car, consider{" "}
+        <a
+          href="https://ko-fi.com/samwight"
+          className="font-semibold text-red-500 hover:text-red-400 transition-all duration-200"
+        >
+          buying me a coffee on Ko-Fi
+        </a>
+        .
+      </p>
     </div>
   );
 }
